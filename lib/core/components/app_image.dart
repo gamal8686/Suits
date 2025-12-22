@@ -82,17 +82,6 @@ class _AppImageState extends State<AppImage>
         height: widget.height,
         width: widget.width,
         color: widget.color,
-        errorBuilder: (context, error, stackTrace) => Shimmer.fromColors(
-          baseColor: Colors.red,
-          highlightColor: Colors.yellow,
-          child: Center(
-            child: Text(
-              'svg',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
-            ),
-          ),
-        ),
       );
     }
     if (widget.path.endsWith('jpg')) {

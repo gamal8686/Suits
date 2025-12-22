@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../logic/helper_methods.dart';
-
 class AppLoginOrRegister extends StatelessWidget {
   final bool isLogin;
 
