@@ -14,7 +14,8 @@ class AppInput extends StatefulWidget {
   final bool isKeyboardType;
   final double isBorder;
   final bool? isLottieControlled;
-
+  final Widget? prefixIcon;
+  final bool? isCheek;
   const AppInput({
     super.key,
     this.path,
@@ -28,6 +29,8 @@ class AppInput extends StatefulWidget {
     this.validator,
     this.isLottieControlled,
     this.onSelectedCountryCode,
+    this.prefixIcon,
+    this.isCheek = false,
   });
 
   @override
@@ -67,17 +70,18 @@ class _AppInpotState extends State<AppInput> {
                     : TextInputType.name,
                 obscureText: widget.isPassword && isHidden,
                 decoration: InputDecoration(
-                  suffixIcon: widget.isPassword
+                  prefixIcon: widget.prefixIcon,
+                  suffixIcon: widget.isCheek!
+                      ? AppImage(path: 'check.png')
+                      : widget.isPassword
                       ? IconButton(
                           onPressed: () {
-                            isHidden =!isHidden;
-                            setState(() {
-
-                            });
+                            isHidden = !isHidden;
+                            setState(() {});
                           },
                           icon: AppImage(
                             path: isHidden
-                                ? 'visibility_off.svg'
+                                ? 'visabilty.png'
                                 : 'visibility_on.svg',
                           ),
                         )
@@ -88,14 +92,14 @@ class _AppInpotState extends State<AppInput> {
                   ),
 
                   labelText: widget.label,
-                   filled: true,
-                   fillColor: Color(0xffD9D9D9),
-                   enabledBorder: OutlineInputBorder(
-                   borderRadius: BorderRadius.circular(widget.isBorder),
+                  filled: true,
+                  fillColor: Color(0xffE5E7EB),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(widget.isBorder),
+                  ),
                 ),
               ),
             ),
-             ),
           ],
         ),
       ),

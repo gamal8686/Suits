@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suits/core/logic/helper_methods.dart';
+import 'package:suits/views/auth/login.dart';
+import 'package:suits/views/get_started.dart';
 import 'package:suits/views/on_bording.dart';
 import 'package:suits/views/splash.dart';
 
@@ -42,10 +44,10 @@ class MyApp extends StatelessWidget {
             ),
           ),
 
-          fontFamily: 'Montserrat',
+          fontFamily: 'Inter',
           filledButtonTheme: FilledButtonThemeData(
             style: FilledButton.styleFrom(
-              fixedSize: Size.fromHeight(44.1.h),
+              fixedSize: Size.fromHeight(56.1.h),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.r),
               ),
@@ -53,11 +55,13 @@ class MyApp extends StatelessWidget {
             ),
           ),
           inputDecorationTheme: InputDecorationTheme(
-            fillColor: Color(0xffB5B5B5),
+            fillColor: Color(0xffE5E7EB),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.r),
+
               borderSide: BorderSide(
-                color: Color(0xffB5B5B5).withValues(alpha: 0.040),
+                width: 5,
+                color: Color(0xffE5E7EB).withValues(alpha: 0.90),
               ),
             ),
           ),
@@ -68,7 +72,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Color(0xffF4F5F7),
         ),
         title: 'Suits',
-        home: const SplashView(),
+        home: const LoginView(),
       ),
     );
   }

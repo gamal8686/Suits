@@ -1,8 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:suits/core/components/app_button.dart';
 import 'package:suits/core/components/app_image.dart';
+import 'package:suits/core/logic/helper_methods.dart';
+import 'package:suits/views/get_started.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -63,19 +63,19 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         currentIndex++;
                       });
                     } else {
-                      //navigate to home
+                      goTo(GetStartedView());
                     }
                   },
                   child: CircleAvatar(
-                    radius: 30,
+                    radius: 30.r,
                     backgroundColor: Theme.of(context).primaryColor,
                     child: Transform.scale(
                       scaleX: -1,
                       child: AppImage(
                         path: 'arrow_left.svg',
                         color: Colors.white,
-                        width: 20,
-                        height: 20,
+                        width: 20.w,
+                        height: 20.h,
                       ),
                     ),
                   ),
@@ -141,8 +141,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   });
                 },
                 child: Container(
-                  width: 60, // double the radius
-                  height: 60,
+                  width: 60.w,
+                  height: 60.h,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(color: Color(0xff4E6542), width: 2),
@@ -153,8 +153,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     child: AppImage(
                       path: 'arrow_left.svg',
                       color: Theme.of(context).primaryColor,
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                     ),
                   ),
                 ),
