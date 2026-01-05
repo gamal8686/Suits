@@ -14,11 +14,11 @@ class AppLoginOrRegister extends StatelessWidget {
         TextSpan(
           children: [
             TextSpan(
-              text: isLogin ? "Don’t have an account?" : "Have an account?",
+              text: isLogin ? "Didn’t receive the code? " : "Have an account?",
               style: TextStyle(
                 color: Color(0xff434C6D),
                 fontWeight: FontWeight.w400,
-                fontSize: 12.sp,
+                fontSize: 14.sp,
               ),
             ),
             WidgetSpan(
@@ -29,10 +29,10 @@ class AppLoginOrRegister extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 2),
                 ),
                 child: Text(
-                  isLogin ? "Register" : "Login",
+                  isLogin ? "Resend" : " Sign In",
                   style: TextStyle(
-                    color: Color(0xffD75D72),
-                    fontSize: 12.sp,
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suits/core/logic/helper_methods.dart';
+import 'package:suits/views/auth/create_new_password.dart';
+import 'package:suits/views/auth/enter_verification_code.dart';
+import 'package:suits/views/auth/forgot_your_password.dart';
 import 'package:suits/views/auth/login.dart';
+import 'package:suits/views/auth/sign_up.dart';
 import 'package:suits/views/get_started.dart';
 import 'package:suits/views/on_bording.dart';
 import 'package:suits/views/splash.dart';
@@ -49,7 +53,7 @@ class MyApp extends StatelessWidget {
             style: FilledButton.styleFrom(
               fixedSize: Size.fromHeight(56.1.h),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
+                borderRadius: BorderRadius.circular(32.r),
               ),
               backgroundColor: Color(0xffDD8560),
             ),
@@ -60,7 +64,6 @@ class MyApp extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.r),
 
               borderSide: BorderSide(
-                width: 5,
                 color: Color(0xffE5E7EB).withValues(alpha: 0.90),
               ),
             ),

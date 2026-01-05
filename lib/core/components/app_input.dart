@@ -23,7 +23,7 @@ class AppInput extends StatefulWidget {
     this.label,
     this.isPassword = false,
     this.isKeyboardType = false,
-    this.isBorder = 8,
+    this.isBorder = 25.0,
     this.controller,
 
     this.validator,
@@ -70,6 +70,10 @@ class _AppInpotState extends State<AppInput> {
                     : TextInputType.name,
                 obscureText: widget.isPassword && isHidden,
                 decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25.r),
+                    borderSide: BorderSide(color: Color(0xffF40000), width: 2),
+                  ),
                   prefixIcon: widget.prefixIcon,
                   suffixIcon: widget.isCheek!
                       ? AppImage(path: 'check.png')
@@ -88,7 +92,7 @@ class _AppInpotState extends State<AppInput> {
                       : null,
 
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(25.r),
                   ),
 
                   labelText: widget.label,

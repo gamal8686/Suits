@@ -9,7 +9,7 @@ class AppVerifyCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 80.r, right: 80.r),
+      padding: EdgeInsets.only(left: 17.r, right: 17.r),
       child: PinCodeTextField(
         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         keyboardType: TextInputType.number,
@@ -24,13 +24,13 @@ class AppVerifyCode extends StatelessWidget {
         pinTheme: PinTheme(
           inactiveFillColor: Theme.of(context).primaryColor,
 
-          selectedColor: Color(0xffD75D72),
-          activeColor: Color(0xffD75D72),
-          inactiveColor: Theme.of(context).primaryColor,
-          borderRadius: BorderRadius.circular(8.r),
+          selectedColor: Theme.of(context).primaryColor,
+          activeColor: Theme.of(context).primaryColor,
+          inactiveColor: Colors.transparent,
+          borderRadius: BorderRadius.circular(10.r),
 
-          fieldWidth: 45.w,
-          fieldHeight: 45.h,
+          fieldWidth: 65.w,
+          fieldHeight: 65.h,
           shape: PinCodeFieldShape.box,
         ),
       ),

@@ -10,7 +10,7 @@ class InputValidator {
 
   static String? passwordValidator(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Field is empty';
+      return '*The password you entered is wrong';
     } else if (value.length < 2) {
       return 'Password must be at least 5 characters';
     }
