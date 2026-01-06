@@ -24,7 +24,7 @@ class GetStartedView extends StatelessWidget {
                   height: 370.h,
                   width: 170.w,
                   fit: BoxFit.cover,
-                  path: 'on_boarding_3.png',
+                  path: 'on_boarding3.png',
                 ),
               ),
               SizedBox(width: 10.w),
@@ -33,13 +33,13 @@ class GetStartedView extends StatelessWidget {
                 children: [
                   AppImage(
                     fit: BoxFit.cover,
-                    path: 'on_boarding_4.png',
+                    path: 'on_boarding4.png',
                     height: 214.h,
                     width: 173.w,
                   ),
                   SizedBox(height: 23.h),
                   AppImage(
-                    path: 'on_boarding_5.png',
+                    path: 'on_boarding5.png',
                     height: 133.h,
                     width: 141.w,
                   ),
@@ -48,47 +48,51 @@ class GetStartedView extends StatelessWidget {
             ],
           ),
           SizedBox(height: 30.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+        Text.rich(
+          TextSpan(
             children: [
-              Text(
-                'The',
+              TextSpan(
+                text: 'The ',
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
-                  color: Colors.black,
+
                 ),
               ),
-              Text(
-                'Suits App',
+              TextSpan(
+                text: 'Suits App ',
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
                   color: Theme.of(context).primaryColor,
                 ),
               ),
-              Text(
-                'that',
+              TextSpan(
+                text: 'that\n',
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
                   color: Colors.black,
                 ),
               ),
+              TextSpan(
+                text: 'Makes Your Look Your Best',
+                style: TextStyle(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w700,
+
+                ),
+              ),
             ],
           ),
-          Text(
-            'Makes Your Look Your Best',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
-            ),
-          ),
+          textAlign: TextAlign.center,
+        ),
+
+
+
           SizedBox(height: 24.h),
           Text(
-            'Everything you need in the world\nof fashion, old and new',
+            'Everything you need in the world \n of fashion, old and new',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 14.sp,

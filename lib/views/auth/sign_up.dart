@@ -6,8 +6,8 @@ import 'package:suits/core/components/app_input.dart';
 import 'package:suits/core/components/app_login_or_register.dart';
 import 'package:suits/core/components/app_validator.dart';
 
-class SignUpview extends StatelessWidget {
-  const SignUpview({super.key});
+class SignUpView extends StatelessWidget {
+  const SignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -70,49 +70,36 @@ class SignUpview extends StatelessWidget {
                   width: 25.w,
                 ),
                 SizedBox(width: 9.w),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          'I agree to the ',
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        Text(
-                          'Terms of Service ',
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                      ],
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          'and ',
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w400,
-                          ),
+                    children: [
+                       TextSpan(text: 'I agree to the '),
+                      TextSpan(
+                        text: 'Terms of Service \n',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Theme.of(context).primaryColor,
                         ),
-                        Text(
-                          'Privacy Policy',
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Theme.of(context).primaryColor,
-                          ),
+
+                      ),
+                       TextSpan(text: ' and '),
+                      TextSpan(
+                        text: 'Privacy Policy',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Theme.of(context).primaryColor,
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                  textAlign: TextAlign.start,
+                )
+
               ],
             ),
             SizedBox(height: 38.h),
@@ -120,7 +107,7 @@ class SignUpview extends StatelessWidget {
               child: AppButton(text: 'Sign Up', onPressed: () {}, width: 330.w),
             ),
             SizedBox(height: 32.h),
-            Center(child: AppLoginOrRegister(isLogin: false)),
+            Center(child: AppLoginOrRegister(isLogin: false,)),
           ],
         ),
       ),

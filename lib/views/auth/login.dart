@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:suits/cheek_masseg.dart';
+import 'package:suits/views/success_message.dart';
 import 'package:suits/core/components/app_button.dart';
 import 'package:suits/core/components/app_google.dart';
 import 'package:suits/core/components/app_image.dart';
@@ -8,6 +8,8 @@ import 'package:suits/core/components/app_input.dart';
 import 'package:suits/core/components/app_validator.dart';
 import 'package:suits/core/logic/helper_methods.dart';
 import 'package:suits/views/auth/sign_up.dart';
+
+import '../../core/components/app_login_or_register.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -20,7 +22,7 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    bool isHiden = true;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -32,8 +34,8 @@ class _LoginViewState extends State<LoginView> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+
           child: Form(
             key: formKey,
             child: Column(
@@ -88,48 +90,49 @@ class _LoginViewState extends State<LoginView> {
                         barrierColor: Colors.black45,
                         context: context,
                         builder: (context) =>
-                            Center(child: AccountActivatedDialog()),
+                            Center(child: SuccessMessage()),
                       );
                     },
                   ),
                 ),
                 SizedBox(height: 16.h),
-                Center(
-                  child: Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "Don’t have an account? ",
-                          style: TextStyle(
-                            color: Color(0xff434C6D),
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12.sp,
-                          ),
-                        ),
-                        WidgetSpan(
-                          alignment: PlaceholderAlignment.middle,
-                          child: TextButton(
-                            style: TextButton.styleFrom(
-                              visualDensity: VisualDensity.compact,
-                              padding: EdgeInsets.symmetric(horizontal: 2.w),
-                            ),
-                            child: Text(
-                              "Sign Up",
-                              style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            onPressed: () {
-                              goTo(SignUpview());
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                Center(child: AppLoginOrRegister()),
+                // Center(
+                //   child: Text.rich(
+                //     TextSpan(
+                //       children: [
+                //         TextSpan(
+                //           text: "Don’t have an account? ",
+                //           style: TextStyle(
+                //             color: Color(0xff434C6D),
+                //             fontWeight: FontWeight.w400,
+                //             fontSize: 12.sp,
+                //           ),
+                //         ),
+                //         WidgetSpan(
+                //           alignment: PlaceholderAlignment.middle,
+                //           child: TextButton(
+                //             style: TextButton.styleFrom(
+                //               visualDensity: VisualDensity.compact,
+                //               padding: EdgeInsets.symmetric(horizontal: 2.w),
+                //             ),
+                //             child: Text(
+                //               "Sign Up",
+                //               style: TextStyle(
+                //                 color: Theme.of(context).primaryColor,
+                //                 fontSize: 12.sp,
+                //                 fontWeight: FontWeight.w600,
+                //               ),
+                //             ),
+                //             onPressed: () {
+                //               goTo(SignUpView());
+                //             },
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
                 SizedBox(height: 16.h),
                 Center(
                   child: Text(
@@ -149,7 +152,7 @@ class _LoginViewState extends State<LoginView> {
             ),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }

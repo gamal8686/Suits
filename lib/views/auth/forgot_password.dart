@@ -4,14 +4,14 @@ import 'package:suits/core/components/app_button.dart';
 import 'package:suits/core/components/app_image.dart';
 import 'package:suits/core/components/app_input.dart';
 
-class ForgotYourPassword extends StatefulWidget {
-  const ForgotYourPassword({super.key});
+class ForgotYourPasswordView extends StatefulWidget {
+  const ForgotYourPasswordView({super.key});
 
   @override
-  State<ForgotYourPassword> createState() => _ForgotYourPasswordState();
+  State<ForgotYourPasswordView> createState() => _ForgotYourPasswordState();
 }
 
-class _ForgotYourPasswordState extends State<ForgotYourPassword> {
+class _ForgotYourPasswordState extends State<ForgotYourPasswordView> {
   bool isSelected = true;
 
   @override
@@ -29,8 +29,8 @@ class _ForgotYourPasswordState extends State<ForgotYourPassword> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(17.0),
+        padding: const EdgeInsets.all(17.0),
+
           child: Column(
             children: [
               SizedBox(height: 20.h),
@@ -157,7 +157,7 @@ class _ForgotYourPasswordState extends State<ForgotYourPassword> {
             ],
           ),
         ),
-      ),
-    );
+      );
+
   }
 }

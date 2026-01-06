@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/components/app_button.dart';
-import '../../core/components/app_image.dart';
+import '../../../core/components/app_button.dart';
+import '../../../core/components/app_image.dart';
 
-class AccountActivatedDialog extends StatelessWidget {
+class SuccessMessage extends StatelessWidget {
   final bool isFromCreateAccount;
 
-  const AccountActivatedDialog({super.key, this.isFromCreateAccount = false});
+  const SuccessMessage({super.key, this.isFromCreateAccount = false});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class AccountActivatedDialog extends StatelessWidget {
                 width: 100.w,
                 height: 100.h,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor.withOpacity(0.1),
+                  color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: AppImage(path: 'check.png', height: 200.h, width: 200.w),
@@ -54,7 +54,7 @@ class AccountActivatedDialog extends StatelessWidget {
 
               AppButton(
                 onPressed: () {},
-                text: isFromCreateAccount ? 'Go to home' : 'Go to home',
+                text: 'Sign In',
                 width: 270.w,
               ),
             ],

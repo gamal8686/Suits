@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suits/core/components/app_image.dart';
 import 'package:suits/core/components/app_input.dart';
 
-class CreateNewPassword extends StatefulWidget {
-  const CreateNewPassword({super.key});
+class CreateNewPasswordView extends StatefulWidget {
+  const CreateNewPasswordView({super.key});
 
   @override
-  State<CreateNewPassword> createState() => _CreateNewPasswordState();
+  State<CreateNewPasswordView> createState() => _CreateNewPasswordState();
 }
 
-class _CreateNewPasswordState extends State<CreateNewPassword> {
+class _CreateNewPasswordState extends State<CreateNewPasswordView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +26,8 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(17.0),
+        padding: const EdgeInsets.all(17.0),
+
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -64,7 +64,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
             ],
           ),
         ),
-      ),
+
     );
   }
 }

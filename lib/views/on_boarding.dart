@@ -12,28 +12,28 @@ class OnBoardingView extends StatefulWidget {
 }
 
 class _OnBoardingViewState extends State<OnBoardingView> {
-  List<_Model> pages = [
+  final pages = [
     _Model(
       title: 'Welcome To\nFashion',
       description:
           'Discover the latest trends and exclusive styles\nfrom our top designers',
-      imagePath: 'on_boarding_1.png',
+      imagePath: 'on_boarding1.png',
     ),
     _Model(
       title: 'Explore & Shop',
       description:
           'Discover a wide range of fashion categories \nbrowse new arrivals and shop your favourites',
-      imagePath: 'on_boarding_2.png',
+      imagePath: 'on_boarding2.png',
     ),
     _Model(
       title: 'Hi,Shop Now',
       description: '',
-      imagePath: 'on_boarding_3.png',
+      imagePath: 'on_boarding3.png',
     ),
   ];
 
   int currentIndex = 0;
-  int previousIndex = 0;
+int previousIndex=0;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +43,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         transitionBuilder: (child, animation) {
           final childIndex = (child.key as ValueKey<int>).value;
           final isNext = childIndex > previousIndex;
+          //  previousIndexمعمولة علشان ايقونة الرجوع
           final offsetAnimation = Tween<Offset>(
             begin: isNext ? Offset(1, 0) : Offset(-1, 0),
             end: Offset(0, 0),
@@ -58,13 +59,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           child: Stack(
             alignment: Alignment.topRight,
             children: [
-              SizedBox.expand(
-                child: ClipRect(
-                  child: AppImage(
-                    path: pages[currentIndex].imagePath,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+              AppImage(
+                height: double.infinity,
+                width: double.infinity,
+                path: pages[currentIndex].imagePath,
+                fit: BoxFit.cover,
               ),
               Padding(
                 padding: const EdgeInsets.all(45.0),
@@ -139,6 +138,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
+                    //دة مكان الثلاث نقط بتوع الانتقال
                     pages.length,
                     (index) => Padding(
                       padding: const EdgeInsets.all(6.0),
@@ -195,8 +195,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
 class _Model {
   final String title;
-  final String description;
-  final String imagePath;
+  final String description,imagePath;
+
 
   _Model({
     required this.title,

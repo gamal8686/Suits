@@ -1,10 +1,9 @@
-import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suits/core/components/app_image.dart';
 import 'package:suits/core/logic/helper_methods.dart';
-import 'package:suits/views/auth/login.dart';
-import 'package:suits/views/on_bording.dart';
+import 'package:suits/views/on_boarding.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -14,20 +13,14 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  Color backgroundColor = Color(0xffDD8560);
-
   @override
   void initState() {
     super.initState();
 
-    Timer(Duration(seconds: 2), () {
-      setState(() {
-        backgroundColor = Color(0xff676767);
-      });
-    });
-    Timer(Duration(seconds: 6), () {
-      goTo(OnBoardingView());
-    });
+
+    goTo(OnBoardingView(), delayDuration: 6);
+    // لية الانتقال سريع من الاسبلاش الى الاون بوردنج مفيش انيميشن للانتقال للصفحة الاخري
+
   }
 
   @override
@@ -35,7 +28,7 @@ class _SplashViewState extends State<SplashView> {
     return Scaffold(
       body: AnimatedContainer(
         duration: Duration(seconds: 2),
-        color: backgroundColor,
+        color: Color(0xffDD8560),
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

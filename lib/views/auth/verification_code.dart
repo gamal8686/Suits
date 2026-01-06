@@ -5,8 +5,8 @@ import 'package:suits/core/components/app_image.dart';
 import 'package:suits/core/components/app_login_or_register.dart';
 import 'package:suits/core/components/app_verify_code.dart';
 
-class EnterVerificationCode extends StatelessWidget {
-  const EnterVerificationCode({super.key});
+class EnterVerificationCodeView extends StatelessWidget {
+  const EnterVerificationCodeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +23,8 @@ class EnterVerificationCode extends StatelessWidget {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(17.0),
+        padding: const EdgeInsets.all(17.0),
+
           child: Column(
             children: [
               Text(
@@ -64,7 +64,7 @@ class EnterVerificationCode extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
+
   }
 }
