@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/components/app_button.dart';
 import '../../../core/components/app_image.dart';
 
-class SuccessMessage extends StatelessWidget {
+class SuccessMessageDialog extends StatelessWidget {
   final bool isFromCreateAccount;
 
-  const SuccessMessage({super.key, this.isFromCreateAccount = false});
+  const SuccessMessageDialog({super.key, this.isFromCreateAccount = false});
 
   @override
   Widget build(BuildContext context) {

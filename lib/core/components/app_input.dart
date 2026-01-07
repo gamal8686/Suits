@@ -16,6 +16,7 @@ class AppInput extends StatefulWidget {
   final bool? isLottieControlled;
   final Widget? prefixIcon;
   final bool? isCheek;
+  final TextInputType? keyboardType;
   const AppInput({
     super.key,
     this.path,
@@ -31,6 +32,7 @@ class AppInput extends StatefulWidget {
     this.onSelectedCountryCode,
     this.prefixIcon,
     this.isCheek = false,
+    this.keyboardType,
   });
 
   @override
@@ -65,9 +67,8 @@ class _AppInpotState extends State<AppInput> {
               child: TextFormField(
                 validator: widget.validator,
                 controller: widget.controller,
-                keyboardType: widget.isKeyboardType
-                    ? TextInputType.number
-                    : TextInputType.name,
+                keyboardType: widget.keyboardType,
+
                 obscureText: widget.isPassword && isHidden,
                 decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(

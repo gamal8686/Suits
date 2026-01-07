@@ -47,7 +47,7 @@ class SignUpView extends StatelessWidget {
             ),
             AppInput(
               validator: InputValidator.passwordValidator,
-
+              keyboardType: TextInputType.number,
               isPassword: true,
               isKeyboardType: true,
               prefixIcon: AppImage(
@@ -61,14 +61,8 @@ class SignUpView extends StatelessWidget {
             SizedBox(height: 16.h),
             Row(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.r),
-                    border: Border.all(color: Color(0xffD9D9D9)),
-                  ),
-                  height: 25.h,
-                  width: 25.w,
-                ),
+                Checkbox(onChanged: (value) {}, value: true),
+
                 SizedBox(width: 9.w),
                 Text.rich(
                   TextSpan(
@@ -78,16 +72,15 @@ class SignUpView extends StatelessWidget {
                       color: Colors.black,
                     ),
                     children: [
-                       TextSpan(text: 'I agree to the '),
+                      TextSpan(text: 'I agree to the '),
                       TextSpan(
                         text: 'Terms of Service \n',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: Theme.of(context).primaryColor,
                         ),
-
                       ),
-                       TextSpan(text: ' and '),
+                      TextSpan(text: ' and '),
                       TextSpan(
                         text: 'Privacy Policy',
                         style: TextStyle(
@@ -98,8 +91,7 @@ class SignUpView extends StatelessWidget {
                     ],
                   ),
                   textAlign: TextAlign.start,
-                )
-
+                ),
               ],
             ),
             SizedBox(height: 38.h),
@@ -107,7 +99,7 @@ class SignUpView extends StatelessWidget {
               child: AppButton(text: 'Sign Up', onPressed: () {}, width: 330.w),
             ),
             SizedBox(height: 32.h),
-            Center(child: AppLoginOrRegister(isLogin: false,)),
+            Center(child: AppLoginOrRegister(isLogin: false)),
           ],
         ),
       ),
