@@ -20,6 +20,9 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final _formKey = GlobalKey<FormState>();
+  final _email = TextEditingController();
+  final _password = TextEditingController();
+
   Future<void> sendData()async{
     final resp= await DioHelper.sendData();
     if(resp.isSuccess){
@@ -55,6 +58,7 @@ class _LoginViewState extends State<LoginView> {
               ),
               SizedBox(height: 30.h),
               AppInput(
+                controller: _email,
                 isCheek: true,
                 prefixIcon: AppImage(
                   path: 'mail.png',
@@ -65,6 +69,7 @@ class _LoginViewState extends State<LoginView> {
                 label: 'Enter your email',
               ),
               AppInput(
+                controller: _password,
                 validator: InputValidator.passwordValidator,
 
                 isPassword: true,
