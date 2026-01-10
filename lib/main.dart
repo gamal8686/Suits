@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suits/core/logic/helper_methods.dart';
+import 'package:suits/core/logic/shared_preferences.dart';
+import 'package:suits/views/auth/create_new_password.dart';
 import 'package:suits/views/auth/forgot_password.dart';
 import 'package:suits/views/auth/sign_up.dart';
-import 'package:suits/views/get_started.dart';
 
+import 'package:suits/views/get_started.dart';
+import 'package:suits/views/on_boarding.dart';
 import 'package:suits/views/splash.dart';
 
-void main() {
+
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+ await CashHelper.init();
   runApp(const MyApp());
 }
 
@@ -72,7 +79,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Color(0xffF4F5F7),
         ),
         title: 'Suits',
-        home: const ForgotYourPasswordView(),
+        home: const SignUpView(),
       ),
     );
   }

@@ -5,6 +5,9 @@ import 'package:suits/core/components/app_image.dart';
 import 'package:suits/core/logic/helper_methods.dart';
 import 'package:suits/views/on_boarding.dart';
 
+import '../core/logic/shared_preferences.dart';
+import 'auth/login.dart';
+
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
 
@@ -18,7 +21,8 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
 
 
-    goTo(OnBoardingView(), delayDuration: 6);
+    goTo(CashHelper.getIsNotFirst? OnBoardingView():LoginView(), delayDuration: 3);
+
     // لية الانتقال سريع من الاسبلاش الى الاون بوردنج مفيش انيميشن للانتقال للصفحة الاخري
 
   }

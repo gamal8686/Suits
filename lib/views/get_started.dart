@@ -5,9 +5,14 @@ import 'package:suits/core/components/app_image.dart';
 import 'package:suits/core/logic/helper_methods.dart';
 import 'package:suits/views/auth/login.dart';
 
+import '../core/logic/shared_preferences.dart';
+
 class GetStartedView extends StatelessWidget {
   const GetStartedView({super.key});
-
+  goToLogin() {
+    CashHelper.setIsNotFirst();
+    goTo( LoginView(), canPop: false);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +29,7 @@ class GetStartedView extends StatelessWidget {
                   height: 370.h,
                   width: 170.w,
                   fit: BoxFit.cover,
-                  path: 'on_boarding3.png',
+                  path: 'get_started1.png',
                 ),
               ),
               SizedBox(width: 10.w),
@@ -33,13 +38,13 @@ class GetStartedView extends StatelessWidget {
                 children: [
                   AppImage(
                     fit: BoxFit.cover,
-                    path: 'on_boarding4.png',
+                    path: 'get _started2.png',
                     height: 214.h,
                     width: 173.w,
                   ),
                   SizedBox(height: 23.h),
                   AppImage(
-                    path: 'on_boarding5.png',
+                    path: 'get _started3.png',
                     height: 133.h,
                     width: 141.w,
                   ),
@@ -104,7 +109,7 @@ class GetStartedView extends StatelessWidget {
           AppButton(
             text: 'Get started',
             onPressed: () {
-              goTo(LoginView());
+              goToLogin();
             },
             width: 325.w,
           ),

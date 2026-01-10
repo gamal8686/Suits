@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:suits/core/logic/dio_helper.dart';
+import 'package:suits/core/logic/helper_methods.dart';
 import 'package:suits/views/success_message_dialog.dart';
 import 'package:suits/core/components/app_button.dart';
 import 'package:suits/core/components/app_google.dart';
@@ -17,7 +19,15 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
+  Future<void> sendData()async{
+    final resp= await DioHelper.sendData();
+    if(resp.isSuccess){
+      showMessage(resp.mag);
+    } else {
+      showMessage(resp.mag, isError: true);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +45,7 @@ class _LoginViewState extends State<LoginView> {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
 
         child: Form(
-          key: formKey,
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -80,7 +90,9 @@ class _LoginViewState extends State<LoginView> {
                   width: 325.w,
                   text: 'Sign In',
                   onPressed: () {
-                    formKey.currentState!.validate();
+                   if (_formKey.currentState!.validate()){
+                     sendData();
+                   }
                     showDialog(
                       barrierColor: Colors.black45,
                       context: context,

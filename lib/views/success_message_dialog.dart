@@ -54,7 +54,7 @@ class SuccessMessageDialog extends StatelessWidget {
 
               AppButton(
                 onPressed: () {},
-                text: 'Sign In',
+                text: isFromCreateAccount? 'Go to home':'Sign In',
                 width: 270.w,
               ),
             ],

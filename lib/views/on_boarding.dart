@@ -4,6 +4,8 @@ import 'package:suits/core/components/app_image.dart';
 import 'package:suits/core/logic/helper_methods.dart';
 import 'package:suits/views/get_started.dart';
 
+
+
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
 
@@ -32,6 +34,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     ),
   ];
 
+
   int currentIndex = 0;
 int previousIndex=0;
 
@@ -57,11 +60,11 @@ int previousIndex=0;
           height: double.infinity,
           color: Colors.black,
           child: Stack(
-            alignment: Alignment.topRight,
+            alignment: AlignmentDirectional.bottomEnd,
             children: [
               AppImage(
-                height: double.infinity,
                 width: double.infinity,
+                height: double.infinity,
                 path: pages[currentIndex].imagePath,
                 fit: BoxFit.cover,
               ),
@@ -138,7 +141,7 @@ int previousIndex=0;
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
-                    //دة مكان الثلاث نقط بتوع الانتقال
+
                     pages.length,
                     (index) => Padding(
                       padding: const EdgeInsets.all(6.0),
