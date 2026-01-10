@@ -6,21 +6,23 @@ class AppButton extends StatelessWidget {
   final String text;
   final double? width;
   final void Function() onPressed;
-
+  final double? height;
   const AppButton({
     super.key,
     required this.text,
     required this.onPressed,
     this.width,
     this.isLoading = false,
+    this.height,
   });
 
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
-      return Center(child: CircularProgressIndicator(strokeAlign: 0.9,),);
+      return Center(child: CircularProgressIndicator(strokeAlign: 0.9));
     }
     return SizedBox(
+      height: height,
       width: width,
       child: FilledButton(
         onPressed: onPressed,
